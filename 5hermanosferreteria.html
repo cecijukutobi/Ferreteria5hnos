@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería 5 hermanos</title>
+    <link rel="stylesheet" href="stylesferreteria.css">
+</head>
+<body>
+    <header>
+        <h1>Ferretería 5 hermanos</h1>
+        <br>
+        <h4>LO QUE NECESITAS, ESTA ACÁ.</h4>
+    <hr/> <!-- marcar una linea-->
+        <nav> <!--estos son atributos de enlace sirve para generar busquedas-->
+            <a href="nosotros.html" class="nav-enlace">NOSOTROS</a>
+            <a href="https://goo.gl/maps/NqagZYGqR4qcDvAR9" class="nav-enlace"target="blank">UBICACION</a>
+        </nav>
+    </header>
+    <main>
+        
+        <h4>Datos Cliente:</h4>
+            <label for="name">Nombre y apellido:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="Direccion">Dirección:</label>
+            <input type="Direccion" id="Direccion" name="Direccion" required>
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" name="phone" required>
+            <br>
+            <br>
+            <br>
+            <input type="hidden" name="products" id="products-input">
+            <button type="submit">Enviar Pedido</button>
+        </form>
+               
+        <h1>Productos</h1>
+        <div id="product-list"></div>
+        <form id="order-form" action="/submit-form" method="POST">
+            
+        
+    </main>
+    <script src="ferreteria5hermanos.js"></script>
+</body>
+
+</html>
+
