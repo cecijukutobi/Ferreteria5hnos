@@ -75,7 +75,7 @@ app.post('/api/send-order', (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'dueno@ferreteria.com', // Reemplaza con el correo del dueño
+        to: 'cliente.ferreteria5hermanos@gmail.com', //  el correo del dueño
         subject: 'Nuevo Pedido de Ferretería',
         html: `
             <h2>Nuevo Pedido</h2>
