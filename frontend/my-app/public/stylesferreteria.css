@@ -1,0 +1,138 @@
+body {
+    background-color: rgb(246, 245, 242);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+header img { 
+    width: 480px; 
+    height: 150px;
+}
+
+h1 {
+    color: red;
+    padding: 1rem;
+    text-align: center;
+}
+
+h2 {}
+
+h3 {
+    background-color: #3b45ad;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+h4 {
+    cursor: grab;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: red;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 30px 10px 5px;
+    width: auto;
+}
+
+#contenedorcliente {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+
+#contenedor {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: #0e3afa;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+
+    
+}
+#cart-icon {
+    position: sticky;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#cart-icon .material-symbols-outlined {
+    font-size: 40px;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 30%;
+    padding: 5px 10px;
+    margin-left: -10px;
+    font-size: 18px;
+}
+
+.contenedor-producto {
+    display: flex;
+    gap: 20px; /* Espacio entre las cajas */
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que las cajas se ajusten si no hay espacio */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.product-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.product-name {
+    padding: 10px;
+}

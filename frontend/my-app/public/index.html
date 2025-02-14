@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería 5 Hermanos</title>
+    <link rel="stylesheet" href="stylesferreteria.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="logo5hermanosferreteria.jpg" alt="logo Ferretería">
+        </nav>
+    </header>
+    <main>
+        <h4>LO QUE NECESITAS, ESTÁ ACÁ.</h4>
+        <br>
+        <!--<hr/> sirve para marcar una linea-->
+        <div id="contenedor">    
+            <nav> <!--estos son atributos de enlace sirve para generar busquedas-->
+                <a href="nosotros.html" class="nav-enlace">NOSOTROS</a>
+                <a href="https://goo.gl/maps/NqagZYGqR4qcDvAR9" class="nav-enlace" target="_blank">UBICACIÓN</a>
+            </nav>
+        </div>
+        <br>
+        <h4>Datos del Cliente:</h4>
+        <div id="contenedorcliente">
+            <br>
+            <label for="name">Nombre y Apellido:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" name="phone" required>
+            <br><br><br>
+            <input type="hidden" name="products" id="products-input">
+        </div>
+        <h4>Productos</h4>
+        <div id="product-list"></div>
+        <form id="order-form" action="/submit-form" method="POST">
+            <button type="submit" id="submit-order">Enviar Pedido</button>
+        </form>
+        <div id="cart-icon">
+            <span class="material-symbols-outlined">garden_cart</span>
+            <span id="cart-count">0</span>
+        </div>
+    </main>
+   
+    <script src="ferreteria5hermanos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
