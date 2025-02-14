@@ -1,4 +1,3 @@
-//back
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
@@ -22,10 +21,13 @@ db.connect((err) => {
 
 // Configuración de nodemailer
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    /*service: 'outlook',*/
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false,
     auth: {
-        user: 'cliente.ferreteria5hermanos@gmail.com', 
-        pass: '15/06/1977' 
+        user: 'clientes.ferreteria5hnos@outlook.com.ar',
+        pass: '15/06/1977'
     }
 });
 
@@ -71,16 +73,17 @@ app.delete('/api/products/:id', (req, res) => {
 
 // Enviar pedido por correo
 app.post('/api/send-order', (req, res) => {
-    const { name, email, phone, products } = req.body;
+    const { name, email, phone, address, products } = req.body;
 
     const mailOptions = {
         from: email,
-        to: 'cliente.ferreteria5hermanos@gmail.com', //  el correo del dueño
+        to: 'clientes.ferreteria5hnos@outlook.com.ar', // El correo del local
         subject: 'Nuevo Pedido de Ferretería',
         html: `
             <h2>Nuevo Pedido</h2>
             <p><strong>Nombre:</strong> ${name}</p>
             <p><strong>Correo Electrónico:</strong> ${email}</p>
+            <p><strong>Dirección:</strong> ${address}</p>
             <p><strong>Teléfono:</strong> ${phone}</p>
             <p><strong>Productos:</strong></p>
             <pre>${products}</pre>
