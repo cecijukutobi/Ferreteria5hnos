@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = [
         { id: 1, name: 'Martillo', price: 100 },
         { id: 2, name: 'Mosquitero', price: 150 },
-        { id: 3, name: 'Destornillador', price: 2080 },
+        { id: 3, name: 'Tornillo', price: 2080 },
         { id: 4, name: 'Lijas', price: 100 },
         { id: 5, name: 'Llaves', price: 150 },
         { id: 6, name: 'Lamparas', price: 2080 },
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
     // Enviar pedido
     orderForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 products: JSON.stringify(order)
             };
 
-            fetch('http://localhost:3001/api/send-order', {
+            fetch('http://localhost:3001/api/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -64,9 +63,41 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.text())
             .then(message => alert(message))
-            .catch(error => console.error('Error sending order:', error));
+            .catch(error => console.error('Error saving order:', error));
         } else {
             alert('El carrito está vacío.');
         }
+
+        
+
+
+        app.post('/send-mail', (req, res) => {
+            const { name, email, message } = req.body;
+        
+            const mailOptions = {
+                from: email,
+                to: 'clientes.ferreteria5hnos@gmail.com',
+                subject: `Nuevo mensaje de ${name}`,
+                text: message
+            };
+        
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return res.status(500).json({ message: 'Error al enviar el correo.' });
+                }
+        
+                const sql = 'INSERT INTO mensajes (name, email, message) VALUES (?, ?, ?)';
+                db.query(sql, [name, email, message], (err, result) => {
+                    if (err) {
+                        return res.status(500).json({ message: 'Error al guardar el mensaje en la base de datos.' });
+                    }
+        
+                    res.status(200).json({ message: 'Correo enviado exitosamente y mensaje guardado.' });
+                });
+            });
+        });
+        
+
+        
     });
 });

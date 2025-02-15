@@ -38,12 +38,12 @@ const App = () => {
             return;
         }
 
-        await axios.post('http://localhost:3001/api/send-order', {
+        await axios.post('http://localhost:3001/api/orders', {
             ...customer,
             products: JSON.stringify(order)
         });
 
-        alert('Pedido enviado al dueño de la ferretería.');
+        alert('Pedido guardado con éxito en la base de datos.');
         setOrder([]);
         setCustomer({ name: '', email: '', phone: '', address: '' });
     };
@@ -102,7 +102,7 @@ const App = () => {
                     value={customer.address}
                     onChange={(e) => setCustomer({ ...customer, address: e.target.value })}
                 />
-                <button onClick={sendOrder}>Enviar Pedido</button>
+                <button onClick={sendOrder}>Guardar Pedido</button>
             </div>
         </div>
     );

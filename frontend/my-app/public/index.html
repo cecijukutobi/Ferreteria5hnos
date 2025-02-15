@@ -22,6 +22,7 @@
             <nav> <!--estos son atributos de enlace sirve para generar busquedas-->
                 <a href="nosotros.html" class="nav-enlace">NOSOTROS</a>
                 <a href="https://goo.gl/maps/NqagZYGqR4qcDvAR9" class="nav-enlace" target="_blank">UBICACIÓN</a>
+                <a href="report.html" class="nav-enlace">PEDIDOS</a>
             </nav>
         </div>
         <br>
@@ -41,13 +42,25 @@
         </div>
         <h4>Productos</h4>
         <div id="product-list"></div>
-        <form id="order-form" action="/submit-form" method="POST">
+        <form id="order-form" method="POST">
             <button type="submit" id="submit-order">Enviar Pedido</button>
         </form>
         <div id="cart-icon">
             <span class="material-symbols-outlined">garden_cart</span>
             <span id="cart-count">0</span>
         </div>
+        
+        <h4>Contactanos</h4>
+             <form id="contactForm">
+                     <label for="name">Nombre:</label><br>
+                     <input type="text" id="name" name="name" required><br>
+                     <label for="email">Correo Electrónico:</label><br>
+                     <input type="email" id="email" name="email" required><br>
+                    <label for="message">Mensaje:</label><br>
+                    <textarea id="message" name="message" required></textarea><br>
+                    <button type="submit">Enviar</button>
+                </form>
+    <br>
     </main>
    
     <script src="ferreteria5hermanos.js"></script>
